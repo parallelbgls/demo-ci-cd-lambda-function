@@ -1,0 +1,7 @@
+CodeBuildBasePolicy 
+"arn:aws:s3:::demo-ci-cd-sam-bucket-*"
+
+apis
+curl -X POST -d '{"id":"1","name":"ram"}' https://<api-gateway-id>.execute-api.ap-northeast-1.amazonaws.com/Prod/writeitem
+curl -X POST -d '{"id":"1"}' https://<api-gateway-id>.execute-api.ap-northeast-1.amazonaws.com/Prod/readitem
+curl -X POST -d '{"id":"1"}' https://<api-gateway-id>.execute-api.ap-northeast-1.amazonaws.com/Prod/deleteitem
