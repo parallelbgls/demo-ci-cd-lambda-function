@@ -60,3 +60,14 @@ Resources:
       Policies:
         DynamoDBCrudPolicy:
           TableName: !Ref myDB
+          
+    ServerlessRestApi:
+      Type: AWS::Serverless::Api
+      DeletionPolicy: "Retain"
+      Properties:
+        StageName: "Prod"
+        
+Outputs:
+  ProdDataEndpoint:
+    Description: "API Prod stage endpoint"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
